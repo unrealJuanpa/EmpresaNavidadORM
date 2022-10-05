@@ -1,0 +1,66 @@
+﻿@model EmpresaNavidadORM.Models.Envia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Envia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.producto.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producto.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sucursalEnvia.NombreAdicional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sucursalEnvia.NombreAdicional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sucursalRecibe.NombreAdicional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sucursalRecibe.NombreAdicional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadEnvia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadEnvia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
