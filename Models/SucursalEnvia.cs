@@ -13,6 +13,12 @@ namespace EmpresaNavidadORM.Models
         [Required]
         public int Id { get; set; }
 
-        public Sucursal sucursales { get; set; }
+        [MaxLength(200)]
+        public string NombreAdicional { get; set; }
+
+        public Sucursal sucursal { get; set; }
+        public int SucursalId { get; set; }
+
+        public ICollection<Envia> envia { get; set; }
     }
 }

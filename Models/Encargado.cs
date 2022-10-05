@@ -21,6 +21,6 @@ namespace EmpresaNavidadORM.Models
         [MaxLength(200)]
         public string Email { get; set; }
 
-        public ICollection<Sucursal> TablaSucursal { get; set; }
+        public ICollection<Sucursal> sucursals { get; set; }
     }
 }

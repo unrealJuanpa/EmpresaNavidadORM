@@ -15,6 +15,6 @@ namespace EmpresaNavidadORM.Models
         [MaxLength(200)]
         public string NombreDepartamento { get; set; }
 
-        public ICollection<Municipio> TablaMunicipio { get; set; }
+        public ICollection<Municipio> municipios { get; set; }
     }
 }

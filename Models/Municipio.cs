@@ -16,6 +16,7 @@ namespace EmpresaNavidadORM.Models
         public string NombreMunicipio { get; set; }
 
         public Departamento departamentos { get; set; }
-        public ICollection<Sucursal> TablaSucursal { get; set; }
+        public int DepartamentoId { get; set; }
+        public ICollection<Sucursal> sucursals { get; set; }
     }
 }

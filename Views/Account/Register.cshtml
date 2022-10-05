@@ -1,40 +1,98 @@
 ﻿@model EmpresaNavidadORM.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Nuevo Usuario";
 }
+<style>
+    .Contenedor h1 {
+        margin: 0 0 30px;
+        padding: 0;
+        text-align: center;
+        color: white
+    }
 
-<h2>@ViewBag.Title.</h2>
+    .Contenedor h4 {
+        margin: 0 0 30px;
+        padding: 0;
+        text-align: center;
+        color: white
+    }
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    .Contenedor {
+        width: 45%;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: 27%;
+        background: rgba(0,0,0,.6);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.5);
+        border-radius: 20px;
+    }
+
+    label {
+        text-align: center;
+        color: white
+    }
+
+    .label-inputs {
+        display: block;
+        padding-left: 0;
+    }
+</style>
+
+<div class="Contenedor">
+    <h1>@ViewBag.Title.</h1>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Cree una cuenta nueva.</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <center>
+            <div class="form-group">
+                <div class="label-inputs col-md-10">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                </div>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label-inputs col-md-10">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                </div>
+
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label-inputs col-md-10">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                </div>
+
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+        </center>
+
+        <br />
+        <div class="form-group">
+            <center>
+                <input type="submit" class="btn btn-success" value="Registrarse" />
+                <p class="btn btn-primary">
+                    @Html.ActionLink("Regresar", "Login")
+                </p>
+            </center>
+
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+    }
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

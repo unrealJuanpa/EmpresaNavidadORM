@@ -19,9 +19,11 @@ namespace EmpresaNavidadORM.Models
         [MaxLength(200)]
         public string Email { get; set; }
 
-        public ICollection<SucursalEnvia> TablaSucursalEnvia { get; set; }
-        public ICollection<SucursalRecibe> TablaSucursalRecibe { get; set; }
         public Encargado encargados { get; set; }
+        public int EncargadoId { get; set; }
         public Municipio municipios { get; set; }
+        public int MunicipioId { get; set; }
+        public ICollection<SucursalEnvia> sucursalEnvias { get; set; }
+        public ICollection<SucursalRecibe> sucursalRecibes { get; set; }
     }
 }

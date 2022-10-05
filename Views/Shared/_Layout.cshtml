@@ -9,9 +9,54 @@
 
 </head>
 <body>
+    <style>
+        body {
+            background-image: url("https://www.eldulcehogar.es/wp-content/uploads/2021/02/Decoracion-Navidad-0-53080980_m.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        a {
+            color: white
+        }
+
+            a:hover {
+                color: white
+            }
+        footer {
+            font-size: larger;
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            height: 30px;
+            width: 100%;
+            background: rgba(0,0,0,.7);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,.5);
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Sweet Cook S.A.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <br />
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Derechos Reservados J&J Systems</p>
         </footer>

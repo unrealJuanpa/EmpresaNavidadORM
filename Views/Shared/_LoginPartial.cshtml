@@ -3,34 +3,22 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Sweet Cook S.A.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Encargado", "Encargadoes", "Index")</li>
-                    <li>@Html.ActionLink("Sucursal", "Sucursals", "Index")</li>
-                    <li>@Html.ActionLink("Departamento", "Departamentoes", "Index")</li>
-                    <li>@Html.ActionLink("Municipios", "Municipios", "Index")</li>
-                </ul>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    @Html.ActionLink("Hola! " + User.Identity.GetUserName() + "👋", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                </li>
-                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-            </ul>
-        </div>
-    </div>
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Producto", "Index","Productoes")</li>
+            <li>@Html.ActionLink("Encargado", "Index", "Encargadoes")</li>
+            <li>@Html.ActionLink("Sucursal", "Index", "Sucursals")</li>
+            <li>@Html.ActionLink("Sucursales Envian", "Index", "SucursalEnvias")</li>
+            <li>@Html.ActionLink("Sucursales Reciben", "Index", "SucursalRecibes")</li>
+            <li>@Html.ActionLink("Envia", "Index", "Envias")</li>
+            <li>@Html.ActionLink("Recibe", "Index", "Recibes")</li>
+            <li>@Html.ActionLink("Departamento", "Index", "Departamentoes")</li>
+            <li>@Html.ActionLink("Municipios", "Index", "Municipios")</li>
+            <li>
+                @Html.ActionLink("Hola! " + User.Identity.GetUserName() + "👋", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
     }
 }
 else

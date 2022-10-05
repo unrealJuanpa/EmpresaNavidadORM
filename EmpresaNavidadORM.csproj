@@ -310,9 +310,12 @@
     <Compile Include="Models\DB_Context.cs" />
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Encargado.cs" />
+    <Compile Include="Models\Envia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Municipio.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Recibe.cs" />
     <Compile Include="Models\Sucursal.cs" />
     <Compile Include="Models\SucursalEnvia.cs" />
     <Compile Include="Models\SucursalRecibe.cs" />
